@@ -1,0 +1,55 @@
+# --- Composer / PHP ---
+/vendor/
+
+# --- Drupal géré par Composer (ne pas versionner le core & contrib) ---
+/web/core/
+/web/libraries/
+/web/modules/contrib/
+/web/profiles/contrib/
+/web/themes/contrib/
+/web/profiles/custom/*/modules/contrib/
+/web/profiles/custom/*/themes/contrib/
+
+# --- Drupal: fichiers volatiles & sensibles ---
+/web/sites/*/files/
+/web/sites/*/private/
+/web/sites/*/translations/
+/web/sites/simpletest/
+/web/sites/*/settings*.php
+/web/sites/*/services.local.yml
+
+# Garder les exemples (laisse-les traçables)
+!web/sites/example.settings.local.php
+!web/sites/default/default.settings.php
+!web/sites/default/default.services.yml
+
+# --- Front (si tu as des thèmes custom) ---
+/web/themes/custom/**/node_modules/
+/web/themes/custom/**/.cache/
+/web/themes/custom/**/dist/
+/web/themes/custom/**/build/
+/web/themes/custom/**/.vite/
+/web/themes/custom/**/yarn.lock
+/web/themes/custom/**/package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- DDEV / Conteneurs ---
+/.ddev/db_snapshots/
+/.ddev/ssh-auth.sock
+/.ddev/secrets/
+# (on garde le reste de .ddev/ pour partager la config)
+
+# --- Dumps & artefacts ---
+*.sql
+*.sql.gz
+*.dump
+*.log
+
+# --- IDE / OS ---
+/.idea/
+/.vscode/
+/*.code-workspace
+.DS_Store
+Thumbs.db
