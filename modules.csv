@@ -1,0 +1,119 @@
+Package,Name,Status
+Core,announcements_feed,Enabled
+Core,automated_cron,Enabled
+Core,ban,Disabled
+"Web services",basic_auth,Disabled
+Core,big_pipe,Enabled
+Core,block,Enabled
+Core,block_content,Enabled
+Core,breakpoint,Enabled
+Core,ckeditor5,Enabled
+Core,comment,Enabled
+Core,config,Enabled
+Multilingual,config_translation,Disabled
+Core,contact,Enabled
+Core,content_moderation,Disabled
+Multilingual,content_translation,Disabled
+Core,contextual,Enabled
+"Field types",datetime,Enabled
+"Field types",datetime_range,Disabled
+Core,dblog,Enabled
+Core,dynamic_page_cache,Enabled
+Core,editor,Enabled
+Core,field,Enabled
+"Core (Experimental)",field_layout,Disabled
+Core,field_ui,Enabled
+"Field types",file,Enabled
+Core,filter,Enabled
+Core,help,Enabled
+Core,history,Enabled
+"Field types",image,Enabled
+Core,inline_form_errors,Disabled
+"Web services",jsonapi,Disabled
+Multilingual,language,Enabled
+Core,layout_builder,Disabled
+Core,layout_builder_expose_all_field_blocks,Disabled
+Core,layout_discovery,Disabled
+"Field types",link,Enabled
+Multilingual,locale,Enabled
+Core,media,Disabled
+Core,media_library,Disabled
+Core,menu_link_content,Enabled
+Core,menu_ui,Enabled
+Migration,migrate,Disabled
+Migration,migrate_drupal,Disabled
+Migration,migrate_drupal_ui,Disabled
+Core,mysql,Disabled
+"Core (Experimental)",navigation_top_bar,Disabled
+"Core (Experimental)",navigation,Disabled
+Core,node,Enabled
+"Field types",options,Enabled
+Core,package_manager,Disabled
+Core,page_cache,Enabled
+Core,path,Enabled
+Core,path_alias,Enabled
+Core,pgsql,Enabled
+Core,phpass,Disabled
+Core,responsive_image,Disabled
+"Web services",rest,Disabled
+"Core (Experimental)",sdc,Disabled
+Core,search,Enabled
+"Web services",serialization,Disabled
+Core,settings_tray,Disabled
+Core,shortcut,Enabled
+Core,sqlite,Disabled
+Core,syslog,Disabled
+Core,system,Enabled
+Core,taxonomy,Enabled
+"Field types",telephone,Disabled
+"Field types",text,Enabled
+Core,toolbar,Enabled
+Core,update,Enabled
+Core,user,Enabled
+Core,views,Enabled
+Core,views_ui,Enabled
+Core,workflows,Disabled
+Core,workspaces,Disabled
+Core,workspaces_ui,Disabled
+Administration,admin_toolbar,Enabled
+Administration,admin_toolbar_links_access_filter,Disabled
+Administration,admin_toolbar_search,Disabled
+Administration,admin_toolbar_tools,Enabled
+"Chaos tool suite",ctools,Disabled
+"Chaos tool suite (Experimental)",ctools_block,Disabled
+Other,ctools_entity_mask,Disabled
+"Chaos tool suite (Experimental)",ctools_views,Disabled
+"Field types",entity_reference_revisions,Disabled
+SEO,metatag,Disabled
+SEO,metatag_app_links,Disabled
+SEO,metatag_custom_tags,Disabled
+SEO,metatag_dc,Disabled
+SEO,metatag_dc_advanced,Disabled
+SEO,metatag_extended_perms,Disabled
+SEO,metatag_facebook,Disabled
+SEO,metatag_favicons,Disabled
+SEO,metatag_google_cse,Disabled
+SEO,metatag_google_plus,Disabled
+SEO,metatag_hreflang,Disabled
+SEO,metatag_mobile,Disabled
+SEO,metatag_open_graph,Disabled
+SEO,metatag_open_graph_products,Disabled
+SEO,metatag_page_manager,Disabled
+SEO,metatag_pinterest,Disabled
+SEO,metatag_routes,Disabled
+SEO,metatag_twitter_cards,Disabled
+SEO,metatag_verification,Disabled
+SEO,metatag_views,Disabled
+Paragraphs,paragraphs_demo,Disabled
+Paragraphs,paragraphs_library,Disabled
+Paragraphs,paragraphs_type_permissions,Disabled
+Paragraphs,paragraphs,Disabled
+Other,pathauto,Disabled
+Other,redirect_404,Disabled
+Other,redirect_domain,Disabled
+Other,redirect,Disabled
+Security,seckit,Disabled
+SEO,simple_sitemap_engines,Disabled
+SEO,simple_sitemap_views,Disabled
+SEO,simple_sitemap,Disabled
+Other,token,Disabled
