@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Hooks pour le module opt_blocks.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function opt_blocks_theme($existing, $type, $theme, $path) {
+  // ↓ Remplace drupal_get_path('module', 'opt_blocks')
+  $module_path = \Drupal::service('extension.path.resolver')
+    ->getPath('module', 'opt_blocks');
+
+  return [
+    // Adapte le nom 'hero_accueil' à ton template si besoin.
+    'hero_accueil' => [
+      'render element' => 'elements',
+      'template' => 'hero-accueil',
+      'path' => $module_path . '/templates',
+    ],
+  ];
+}

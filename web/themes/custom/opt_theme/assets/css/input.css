@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@source "../../templates";
+@source "../../templates/**";
+@source "../../**/*.twig";
+
+/* Tokens simples pour l’OPT (ajuste plus tard) */
+:root{
+  --opt-primary: #008FB3;
+}
+

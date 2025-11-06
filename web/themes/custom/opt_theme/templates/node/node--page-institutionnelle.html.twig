@@ -1,0 +1,36 @@
+{# templates/node/node--page-institutionnelle.html.twig #}
+
+{{ attach_library('opt_theme/global-styles') }}
+{{ attach_library('opt_theme/page-institutionnelle') }}
+
+<article{{ attributes.addClass('page-institutionnelle', 'pi-page') }}>
+
+  {# === Hero section === #}
+  <header class="pi-hero">
+    {% if content.field_image %}
+      <div class="pi-hero__image">
+        {{ content.field_image }}
+      </div>
+    {% endif %}
+
+    <div class="pi-hero__content pi-container">
+      {% if content.field_liste %}
+        <div class="pi-hero__tag">{{ content.field_liste }}</div>
+      {% endif %}
+
+      <h1 class="pi-hero__title">{{ label }}</h1>
+
+      {% if content.body %}
+        <div class="pi-hero__intro">{{ content.body }}</div>
+      {% endif %}
+    </div>
+  </header>
+
+  {# === Contenu principal (Paragraphs) === #}
+  {% if content.field_blocs_de_contenu %}
+    <section class="pi-content pi-container">
+      {{ content.field_blocs_de_contenu }}
+    </section>
+  {% endif %}
+
+</article>

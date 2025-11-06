@@ -1,0 +1,29 @@
+{# templates/paragraph/paragraph--bloc-image-texte.html.twig #}
+{{ attach_library('opt_theme/global-styles') }}
+
+{% set orientation = paragraph.field_orientation.value ?: 'gauche' %}
+
+<section class="p-card p-card--{{ orientation }}">
+  <figure class="p-card__media">
+    {{ content.field_image }}
+  </figure>
+
+  <div class="p-card__content">
+    {% if content.field_titre %}
+      <h3 class="p-card__title">{{ content.field_titre }}</h3>
+    {% endif %}
+
+    {# On rend le champ formaté (avec filtres) et on plie/déplie côté CSS/JS #}
+    <div class="p-card__text js-readmore">
+      {{ content.field_texte_resume }}
+    </div>
+
+    <div class="p-card__actions">
+      <button class="p-card__btn js-readmore-toggle" type="button">Lire la suite</button>
+      {# CTA optionnel si tu as aussi un lien éditorial #}
+      {% if content.field_lien %}
+        <span class="p-card__cta">{{ content.field_lien }}</span>
+      {% endif %}
+    </div>
+  </div>
+</section>

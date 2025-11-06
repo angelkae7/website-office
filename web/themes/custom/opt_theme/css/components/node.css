@@ -1,0 +1,33 @@
+/**
+ * @file
+ * Visual styles for nodes.
+ */
+
+/* === node.css === */
+/* Styles communs à tous les types de contenus (institutionnelle, fiche, actualités, etc.) */
+
+.node {
+  --max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.node h1, .node h2, .node h3 {
+  font-family: "Open Sans", sans-serif;
+  color: #0b6e84;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.node p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #1f2a30;
+}
+
+.node img {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: block;
+  margin: 1.5rem 0;
+}

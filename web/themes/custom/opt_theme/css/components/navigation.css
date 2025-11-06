@@ -1,0 +1,267 @@
+/* ----------------------------------------------------------
+   OPT-NC – Header (logo à gauche) + Main navigation
+   ---------------------------------------------------------- */
+
+/* ===== Variables */
+:root{
+  --opt-teal:#0B6E84;   /* liens rapides + langue */
+  --opt-text:#1B1E23;   /* liens menu principal */
+  --opt-gray:#E6E9ED;   /* ombre fine */
+  --opt-line:#A5AFB8;   /* trait champ recherche */
+  --opt-home:#1C3D8E;   /* pastille icône Home */
+}
+
+/* Petits resets pour éviter les marges Drupal dans ces zones */
+.region-topbar .block,
+.region-header .block,
+.region-main-nav .block{ margin:0; padding:0; background:transparent; box-shadow:none; border:none; }
+.block-menu .menu__item, .menu-item{ margin:0; }
+.menu{ list-style:none; padding:0; margin:0; }
+
+/* ----------------------------------------------------------
+   TOPBAR  (logo à gauche, liens + FR|EN à droite)
+   ---------------------------------------------------------- */
+.opt-topbar{
+  background:#fff;
+  border-bottom: 1px solid rgba(0,0,0,.03);
+}
+.opt-topbar__inner{
+  max-width:1260px;
+  margin-inline:auto;
+  padding: 14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.opt-logo img{
+  height:60px; width:auto; display:block;
+}
+
+.opt-topbar__right{
+  display:flex; align-items:center; gap:24px;
+}
+
+/* Accès rapides (services / contact) */
+.opt-quicklinks .menu{ display:flex; align-items:center; gap:28px; }
+.opt-quicklinks a{
+  color:var(--opt-teal);
+  font-weight:600;
+  text-decoration:none;
+  font-size:15px;
+}
+.opt-quicklinks a:hover{ text-decoration:underline; }
+
+/* FR | EN (language switcher) */
+.opt-lang .language-switcher-language-url{
+  display:flex; gap:14px; align-items:center;
+}
+.opt-lang .language-switcher-language-url li+li::before{
+  content:"|"; opacity:.55; margin:0 8px 0 4px;
+}
+.opt-lang a{
+  color:var(--opt-teal);
+  font-weight:700;
+  text-decoration:none;
+}
+.opt-lang a.is-active{ text-decoration:underline; }
+
+/* ----------------------------------------------------------
+   BARRE PRINCIPALE (cadre non pleine largeur + ombre)
+   ---------------------------------------------------------- */
+.opt-mainbar { margin-top: 10px; }
+
+.opt-frame{
+  max-width: 1300px;
+  margin-inline: auto;
+  padding: 12px 24px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.06), 0 1px 0 var(--opt-gray);
+  display: flex;                 /* une seule ligne : menu + recherche */
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: nowrap;
+}
+
+/* Menu principal : occupe l’espace restant */
+.opt-mainnav{
+  flex: 1 1 auto;
+  min-width: 0;                  /* autorise la compression sans wrap parasite */
+}
+.opt-mainnav .menu{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;               /* peut revenir à la ligne si la place manque */
+  margin: 0;
+  padding: 0;
+}
+.opt-mainnav a{
+  color: var(--opt-text);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: .1px;
+  font-size: 18px;
+}
+.opt-mainnav a:hover{ color:#000; }
+
+/* Icône Home sur le 1er item */
+.opt-mainnav .menu > li:first-child > a{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.opt-mainnav .menu > li:first-child > a::before{
+  content: "";
+  width: 28px; height: 28px; border-radius: 6px;
+  background: var(--opt-home)
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 10.5L12 3l9 7.5'/%3E%3Cpath d='M5 10v10h14V10'/%3E%3Cpath d='M9 20v-6h6v6'/%3E%3C/svg%3E")
+    center/16px 16px no-repeat;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+}
+
+/* Petite flèche › après chaque item (optionnel) */
+.opt-mainnav .menu > li > a::after{
+  content: "\00a0\203A";
+  opacity: .35;
+  margin-left: 10px;
+}
+
+/* Recherche : poussée à droite, alignée verticalement */
+.opt-search{
+  flex: 0 0 auto;
+  margin-left: auto;             /* colle à droite */
+}
+.opt-search .form-item,
+.opt-search .js-form-type-search { margin: 0; }
+.opt-search form{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  white-space: nowrap;           /* tient sur une ligne */
+}
+
+/* Champ compact, trait bas uniquement */
+.opt-search input[type="search"]{
+  width: min(360px, 40vw);
+  height: 32px;
+  line-height: 32px;
+  padding: 4px 30px 4px 8px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--opt-line);
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Bouton loupe minimal */
+.opt-search .form-actions{
+  position: relative;
+  width: 24px; height: 24px;
+  margin-left: -28px;            /* recouvre l’extrémité droite de l’input */
+}
+.opt-search .form-actions .button,
+.opt-search .form-actions input[type="submit"]{
+  all: unset;
+  cursor: pointer;
+  width: 24px; height: 24px; display: inline-block;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%230B6E84' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='20' y1='20' x2='16.65' y2='16.65'/%3E%3C/svg%3E")
+    center/20px 20px no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+/* Responsif */
+@media (max-width: 1200px){
+  .opt-mainnav a{ font-size: 16px; }
+  .opt-mainnav .menu{ gap: 32px; }
+}
+@media (max-width: 980px){
+  .opt-frame{
+    flex-wrap: wrap;             /* 2 lignes propres : menu puis recherche */
+    gap: 14px;
+  }
+  .opt-mainnav{ flex: 1 1 100%; order: 1; }
+  .opt-search{ flex: 1 1 100%; order: 2; margin-left: 0; }
+  .opt-search input[type="search"]{ width: 100%; }
+}
+
+
+/* ========= ALIGNER le bloc de recherche sur la hauteur des liens ========= */
+/* Cible le bloc de recherche dans ta barre principale */
+.opt-frame .block-search,
+.opt-frame .search-block-form{ margin:0; }
+
+/* Le formulaire en ligne, centré verticalement comme les liens */
+.opt-frame .block-search form,
+.opt-frame .search-block-form form{
+  display:flex;
+  align-items:center;           /* alignement sur la ligne des liens */
+  gap:8px;
+  margin:0;
+}
+
+/* Écrase l'input Olivero : hauteur compacte + trait bas uniquement */
+.opt-frame .block-search input[type="search"],
+.opt-frame .search-block-form input[type="search"]{
+  height:32px;                  /* ≈ hauteur visuelle d’un lien 18px */
+  line-height:32px;
+  padding:4px 30px 4px 8px;     /* place pour l’icône loupe à droite */
+  border:none !important;
+  border-bottom:2px solid #A5AFB8 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  outline:none;
+  font-size:16px;
+}
+
+/* Bouton : icône loupe (pas de gros bouton bleu) */
+.opt-frame .block-search .form-actions,
+.opt-frame .search-block-form .form-actions{
+  position:relative; width:24px; height:24px; margin-left:-28px;  /* recouvre l’extrémité droite de l’input */
+}
+
+.opt-frame .block-search .form-actions .button,
+.opt-frame .block-search .form-actions input[type="submit"],
+.opt-frame .search-block-form .form-actions .button,
+.opt-frame .search-block-form .form-actions input[type="submit"]{
+  all:unset;                     /* supprime styles bouton */
+  cursor:pointer;
+  width:24px; height:24px; display:inline-block;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%230B6E84' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='20' y1='20' x2='16.65' y2='16.65'/%3E%3C/svg%3E")
+    center/20px 20px no-repeat;
+  text-indent:-9999px;           /* cache le texte “Rechercher” si présent */
+  overflow:hidden;
+}
+
+/* Petites sécurités contre les “cartes” Olivero */
+.opt-frame .block-search .container,
+.opt-frame .search-block-form .container{
+  padding:0; margin:0; background:transparent; box-shadow:none; border:none;
+}
+
+/* Aligne visuellement la barre entière sur les liens */
+.opt-frame{ align-items:center; padding-top:10px; padding-bottom:10px; }
+
+/* (option) resserre un peu l’espacement du menu si besoin */
+.opt-mainnav .menu{ gap:40px; }
+
+
+/* Responsif */
+@media (max-width:1200px){
+  .opt-mainnav a{ font-size:16px; }
+  .opt-mainnav .menu{ gap:36px; }
+}
+@media (max-width:980px){
+  .opt-frame{ grid-template-columns:1fr; gap:14px; }
+  .opt-mainnav .menu{ gap:20px; }
+  .opt-search input[type="search"]{ width:100%; }
+}

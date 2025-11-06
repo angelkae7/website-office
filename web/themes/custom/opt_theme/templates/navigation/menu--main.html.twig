@@ -1,0 +1,24 @@
+{# templates/navigation/menu--main.html.twig #}
+<nav id="mainNav" class="hidden md:block" role="navigation" aria-label="Navigation principale">
+  {% if items %}
+    <ul class="flex items-center gap-6">
+      {% for item in items %}
+        <li class="{{ item.in_active_trail ? 'font-semibold text-slate-900' : 'text-slate-700' }}">
+          <a href="{{ item.url }}" class="hover:text-slate-900 transition-colors">
+            {{ item.title }}
+          </a>
+
+          {% if item.below %}
+            <ul class="mt-2 space-y-1 text-sm">
+              {% for sub in item.below %}
+                <li class="{{ sub.in_active_trail ? 'font-medium text-slate-900' : 'text-slate-600' }}">
+                  <a href="{{ sub.url }}" class="hover:text-slate-900">{{ sub.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</nav>

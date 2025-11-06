@@ -1,0 +1,25 @@
+{# templates/page--front.html.twig #}
+
+<header class="site-header" role="banner">
+  {{ page.header }}
+</header>
+
+<nav class="site-nav" role="navigation" aria-label="{{ "Navigation principale"|t }}">
+  {{ page.primary_menu }}
+</nav>
+
+<main id="main-content" class="home" role="main">
+  {# HERO (bandeau d’accueil) — place un bloc dans "highlighted" via l’UI #}
+  <section class="home-hero" aria-label="{{ "Section d’introduction"|t }}">
+    {{ page.highlighted }}
+  </section>
+
+  {# CONTENU principal — place ici tes vues/blocs (services, actus, chiffres, etc.) #}
+  <section class="home-content" aria-label="{{ "Contenus de la page d’accueil"|t }}">
+    {{ page.content }}
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  {{ page.footer }}
+</footer>

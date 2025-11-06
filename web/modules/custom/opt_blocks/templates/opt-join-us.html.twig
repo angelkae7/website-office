@@ -1,0 +1,13 @@
+<section class="my-16 bg-sky-50 border-y">
+  <div class="container mx-auto px-4 py-10 flex flex-col lg:flex-row items-center gap-6">
+    <div class="grow">
+      <h2 class="text-2xl font-bold mb-2">{{ title }}</h2>
+      <p class="text-lg">{{ text }}</p>
+    </div>
+    {% if cta %}
+      <a href="{{ cta.url }}" class="inline-block rounded-xl px-6 py-3 border font-semibold hover:shadow">
+        {{ cta.label }}
+      </a>
+    {% endif %}
+  </div>
+</section>

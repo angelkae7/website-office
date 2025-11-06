@@ -1,0 +1,14 @@
+<section class="container mx-auto px-4 my-10">
+  <h2 class="text-2xl font-bold mb-6">Accès rapides</h2>
+  <div class="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
+    {% for item in links %}
+      <a href="{{ item.url }}"
+         class="group rounded-2xl border p-4 text-center hover:shadow-md transition">
+        {% if item.icon %}
+          <img src="{{ item.icon }}" alt="" class="mx-auto mb-3 h-10 w-10 object-contain" />
+        {% endif %}
+        <span class="font-medium group-hover:underline">{{ item.label }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>

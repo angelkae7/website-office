@@ -1,0 +1,99 @@
+/* ---- Carte Image + Titre + Texte + Bouton (avec Lire la suite) ---- */
+.p-card{ 
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;     /* << clé : plus de recentrage vertical */
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: #F3F5F7;
+  border-radius: 16px;
+  position: relative;
+  align-items: start; 
+  overflow: visible; }
+.p-card__media{
+  position: sticky;
+  top: 2rem;              /* ajuste l’offset sous le header */
+  align-self: start;
+}
+
+.p-card__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;              /* angles doux */
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);  /* ombre légère */
+}
+
+
+.p-card::before{content:"";position:absolute;left:50%;top:2rem;bottom:2rem;width:1px;background:#E3E8EB}
+.p-card--droite{direction:rtl}.p-card--droite .p-card__content{direction:ltr}
+.p-card__title{margin:0 0 .75rem;font-size:1.15rem;font-weight:700}
+/* Effet 'Lire la suite' via line-clamp (plié par défaut) */
+.p-card__text{
+  color:#2b2b2b;
+  line-height:1.6;
+  font-size:.95rem;
+  max-width:60ch;
+  display:-webkit-box;
+  -webkit-line-clamp: 8;          /* nb de lignes visibles fermées */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: relative;
+  transition: max-height .35s ease, -webkit-line-clamp .35s ease, opacity .2s ease;
+}
+.p-card__text::after{
+  content:"";
+  position:absolute;left:0;right:0;bottom:0;height:3rem;
+  background:linear-gradient(to bottom, rgba(243,245,247,0), #F3F5F7);
+  pointer-events:none;transition:opacity .2s ease;
+}
+.p-card__text.is-expanded{
+  -webkit-line-clamp:unset;max-height:none;overflow:visible;
+}
+.p-card__text.is-expanded::after{opacity:0}
+
+/* Boutons */
+.p-card__actions{display:flex;gap:.75rem;align-items:center;margin-top:1rem}
+.p-card__btn{
+  appearance:none;border:0;cursor:pointer;
+  background:#0B6E84;color:#fff;font-weight:600;
+  border-radius:999px;padding:.7rem 1.4rem;
+  transition:background .2s ease, transform .15s ease, box-shadow .15s ease;
+}
+.p-card__btn:hover{background:#085a6b;transform:translateY(-1px);box-shadow:0 6px 18px rgba(11,110,132,.25)}
+.p-card__cta a{display:inline-block;padding:.6rem 1rem;border-radius:999px;background:#fff;color:#0B6E84;text-decoration:none;border:1px solid #0B6E84}
+
+
+
+/* Taille + rythme typographique plus fins pour le bloc image+texte seulement */
+.paragraph--type--bloc-image-texte .p-card__title{
+  font-size: 1rem;        /* ~16px */
+  line-height: 1.35;
+  letter-spacing: .1px;
+}
+
+.paragraph--type--bloc-image-texte .p-card__text{
+  font-size: .90rem;      /* ~14.4px */
+  line-height: 1.55;
+  color: #1f2a30;
+  max-width: 55ch;        /* colonne un peu plus étroite = lecture + propre */
+}
+
+/* Si tu veux montrer moins de lignes avant "Lire la suite" */
+.paragraph--type--bloc-image-texte .p-card__text{
+  -webkit-line-clamp: 6;  /* au lieu de 8 */
+}
+
+@media (max-width:980px){
+  .p-card{grid-template-columns:1fr;padding:1.5rem}
+  .p-card::before{display:none}
+}
+
+/* Option : affiner encore sur les très grands écrans */
+@media (min-width: 1280px){
+  .paragraph--type--bloc-image-texte .p-card__title{ font-size: .98rem; }
+  .paragraph--type--bloc-image-texte .p-card__text{ font-size: .88rem; }
+}

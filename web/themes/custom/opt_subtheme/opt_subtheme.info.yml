@@ -1,0 +1,23 @@
+name: "OPT Subtheme"
+type: theme
+description: "Thème enfant basé sur Olivero pour la refonte du site OPT-NC."
+core_version_requirement: ^11
+base theme: olivero
+
+libraries:
+  - opt_subtheme/global
+
+libraries-extend:
+  olivero/global-styling:
+    - opt_subtheme/global
+
+regions:
+  header: "Header"
+  primary_menu: "Menu principal"
+  highlighted: "Zone mise en avant"
+  content_top: "Contenu haut"
+  content: "Contenu principal"
+  content_bottom: "Contenu bas"
+  after_content: "Bas de page d’accueil"
+  footer: "Pied de page"
+

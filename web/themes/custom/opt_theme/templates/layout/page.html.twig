@@ -1,0 +1,85 @@
+{# ===============================================
+   OPT-NC — Page layout (logo à gauche, topbar + nav)
+   =============================================== #}
+
+{{ attach_library('opt_theme/navigation') }}
+
+{# ========== TOPBAR (logo à gauche + liens métiers + FR|EN à droite) ========== #}
+<div class="opt-topbar">
+  <div class="opt-topbar__inner">
+    <a href="{{ path('<front>') }}" class="opt-logo" aria-label="OPT-NC">
+      <img src="{{ base_path ~ directory }}/logo.svg" alt="OPT-NC – Nouvelle-Calédonie">
+    </a>
+
+    <div class="opt-topbar__right">
+      {% if page.header %}
+        <nav class="opt-quicklinks">
+          {{ page.header }}
+        </nav>
+      {% endif %}
+
+      {% if page.language_switcher %}
+        <div class="opt-lang">
+          {{ page.language_switcher }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{# ========== BARRE PRINCIPALE (menu + recherche) ========== #}
+{% if page.main_nav %}
+  <div class="opt-mainbar">
+    <div class="opt-frame">
+      <nav class="opt-mainnav">
+        {{ page.main_nav }}
+      </nav>
+
+      {% if page.search %}
+        <div class="opt-search">
+          {{ page.search }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+{# ===== HERO ===== #}
+{% if page.hero %}
+  <section class="bg-gradient-to-br from-sky-50 to-white border-b">
+    <div class="container mx-auto px-4 py-10 md:py-16">
+      {{ page.hero }}
+    </div>
+  </section>
+{% endif %}
+
+{# ===== HIGHLIGHTED ===== #}
+{% if page.highlighted %}
+  <section class="container mx-auto px-4 py-8">
+    {{ page.highlighted }}
+  </section>
+{% endif %}
+
+{# ===== CONTENT ===== #}
+<main class="container mx-auto px-4 py-8 grow">
+  {{ page.content }}
+</main>
+
+{# ===== AFTER CONTENT ===== #}
+{% if page.after_content %}
+  <section class="container mx-auto px-4 py-12">
+    {{ page.after_content }}
+  </section>
+{% endif %}
+
+{# ===== FOOTER ===== #}
+<footer class="bg-slate-900 text-slate-100 mt-8">
+  <div class="container mx-auto px-4 py-10">
+    {{ page.footer_top }}
+  </div>
+  <div class="bg-slate-950">
+    <div class="container mx-auto px-4 py-4 text-sm">
+      {{ page.footer_bottom }}
+    </div>
+  </div>
+</footer>

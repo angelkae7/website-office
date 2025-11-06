@@ -1,0 +1,7 @@
+name: OPT-NC Custom Blocks
+type: module
+description: Blocs codés pour le site OPT-NC
+core_version_requirement: ^11
+package: OPT-NC
+dependencies:
+  - drupal:block

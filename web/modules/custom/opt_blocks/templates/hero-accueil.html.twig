@@ -1,0 +1,14 @@
+<section class="relative isolate overflow-hidden bg-gradient-to-br from-sky-600 to-sky-400 text-white py-24 text-center">
+  <div class="container mx-auto px-6">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6">{{ title }}</h1>
+    <p class="text-lg md:text-xl text-white/90 mb-8">{{ subtitle }}</p>
+    <div class="flex justify-center gap-4">
+      <a href="{{ cta_1.url }}" class="bg-white text-sky-700 px-6 py-3 rounded-lg font-semibold hover:bg-slate-100 transition">
+        {{ cta_1.label }}
+      </a>
+      <a href="{{ cta_2.url }}" class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-sky-700 transition">
+        {{ cta_2.label }}
+      </a>
+    </div>
+  </div>
+</section>

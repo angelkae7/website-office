@@ -1,0 +1,17 @@
+:root{
+  --opt-grad-1: #FFFFFF; /* 5% */
+  --opt-grad-2: #F5E4D1; /* 58% */
+  --opt-grad-3: hsla(231, 54%, 33%, 0.31); /* 100% */
+}
+
+html, body{
+  background-color: var(--opt-grad-1);
+  background-image: linear-gradient(
+    180deg,
+    var(--opt-grad-1) 5%,
+    var(--opt-grad-2) 70%,
+    var(--opt-grad-3) 100%
+  ) !important;
+  /* background-attachment: fixed; */
+   /* joli effet, optionnel */
+}

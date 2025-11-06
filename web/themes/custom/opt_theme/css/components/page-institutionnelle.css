@@ -1,0 +1,62 @@
+/* === Page institutionnelle === */
+.page-institutionnelle {
+  --hero-bg: #f3f5f7;
+  --text-color: #1f2a30;
+  --accent-color: #0b6e84;
+}
+
+.pi-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Hero --- */
+.pi-hero {
+  background: var(--hero-bg);
+  border-bottom: 1px solid #e6ebef;
+  padding-bottom: 2rem;
+}
+
+.pi-hero__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.pi-hero__tag {
+  display: inline-block;
+  background: #0b6e84;
+  color: #fff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.pi-hero__title {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+.pi-hero__intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  max-width: 65ch;
+}
+
+/* --- Contenu principal --- */
+.pi-content {
+  padding: 3rem 0 4rem;
+}
+
+.pi-content .paragraph {
+  margin-block: 2.5rem;
+}

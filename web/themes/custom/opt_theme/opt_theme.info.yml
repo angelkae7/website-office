@@ -1,0 +1,34 @@
+name: opt_theme
+type: theme
+'base theme': olivero
+version: 1.0.0
+libraries:
+    - opt_theme/global-styles
+libraries-extend:
+  user/drupal.user:
+    - opt_theme/user
+  core/drupal.dropbutton:
+    - opt_theme/dropbutton
+  core/drupal.dialog:
+    - opt_theme/dialog
+  file/drupal.file:
+    - opt_theme/file
+  core/drupal.progress:
+    - opt_theme/progress
+  core/drupal.tablesort:
+    - opt_theme/drupal.tablesort
+description: ''
+core_version_requirement: ^11
+generator: 'starterkit_theme:11.2.5'
+regions:
+  topbar: "Topbar"
+  header: "En-tête"
+  main_nav: "Navigation principale"
+  search: "Recherche"
+  hero: "Hero accueil"
+  highlighted: "Zone mise en avant"
+  content: "Contenu"
+  after_content: "Après le contenu"
+  footer_top: "Footer haut"
+  footer_bottom: "Footer bas"
+  
