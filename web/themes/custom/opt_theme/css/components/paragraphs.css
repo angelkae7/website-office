@@ -35,7 +35,7 @@
 .p-card__text{
   color:#2b2b2b;
   line-height:1.6;
-  font-size:.95rem;
+  font-size:.8rem;
   max-width:60ch;
   display:-webkit-box;
   -webkit-line-clamp: 8;          /* nb de lignes visibles fermées */

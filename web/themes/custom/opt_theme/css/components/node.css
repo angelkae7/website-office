@@ -7,7 +7,7 @@
 /* Styles communs à tous les types de contenus (institutionnelle, fiche, actualités, etc.) */
 
 .node {
-  --max-width: 1200px;
+  --max-width: 1300px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
 }

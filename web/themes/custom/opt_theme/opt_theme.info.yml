@@ -25,6 +25,7 @@ regions:
   header: "En-tête"
   main_nav: "Navigation principale"
   search: "Recherche"
+  breascrumb: "Fil d'Ariane"
   hero: "Hero accueil"
   highlighted: "Zone mise en avant"
   content: "Contenu"

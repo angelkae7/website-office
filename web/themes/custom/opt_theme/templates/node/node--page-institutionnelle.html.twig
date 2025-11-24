@@ -1,36 +1,29 @@
-{# templates/node/node--page-institutionnelle.html.twig #}
-
 {{ attach_library('opt_theme/global-styles') }}
 {{ attach_library('opt_theme/page-institutionnelle') }}
 
-<article{{ attributes.addClass('page-institutionnelle', 'pi-page') }}>
+{% set term_label = node.field_liste.entity ? node.field_liste.entity.label : null %}
+{% set has_media  = content.field_image is not empty %}
 
-  {# === Hero section === #}
+<article{{ attributes.addClass('page-institutionnelle', has_media ? 'has-media' : 'no-media') }}>
   <header class="pi-hero">
-    {% if content.field_image %}
-      <div class="pi-hero__image">
-        {{ content.field_image }}
-      </div>
-    {% endif %}
-
-    <div class="pi-hero__content pi-container">
-      {% if content.field_liste %}
-        <div class="pi-hero__tag">{{ content.field_liste }}</div>
-      {% endif %}
-
+  <div class="layout-container pi-hero__container">
+    <div class="pi-hero__titlebar">
       <h1 class="pi-hero__title">{{ label }}</h1>
-
-      {% if content.body %}
-        <div class="pi-hero__intro">{{ content.body }}</div>
-      {% endif %}
     </div>
-  </header>
+    {% if has_media %}
+      <figure class="pi-hero__figure">{{ content.field_image }}</figure>
+    {% endif %}
+  </div>
+</header>
 
-  {# === Contenu principal (Paragraphs) === #}
+
+  {# Contenu #}
   {% if content.field_blocs_de_contenu %}
-    <section class="pi-content pi-container">
+  <section class="pi-content">
+    <div class="prose">
       {{ content.field_blocs_de_contenu }}
-    </section>
-  {% endif %}
+    </div>
+  </section>
+{% endif %}
 
 </article>

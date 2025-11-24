@@ -3,27 +3,32 @@
  * Styles for breadcrumbs.
  */
 
-.breadcrumb {
-  padding-bottom: 0.5em;
-}
-.breadcrumb ol {
+/* Supprimer les puces ou marqueurs sur le UL du fil d’Ariane */
+nav.breadcrumb ul,
+nav.breadcrumb ul li {
+  list-style: none !important;
+  list-style-type: none !important;
+  list-style-image: none !important;
   margin: 0;
   padding: 0;
 }
-[dir="rtl"] .breadcrumb ol {
-  /* This is required to win over specificity of [dir="rtl"] ol */
-  margin-right: 0;
+
+/* Supprimer le marqueur pseudo-élément ajouté par le navigateur */
+nav.breadcrumb ul li::marker {
+  content: "" !important;
+  display: none !important;
 }
-.breadcrumb li {
-  display: inline;
+
+nav.breadcrumb ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  counter-reset: none !important;
+}
+
+ul, ol {
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style-type: none;
 }
-/* IE8 does not support :not() and :last-child. */
-.breadcrumb li::before {
-  content: " \BB ";
-}
-.breadcrumb li:first-child::before {
-  content: none;
-}
+

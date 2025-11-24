@@ -1,0 +1,28 @@
+{# menu--menu-principal.html.twig #}
+{{ attach_library('opt_theme/navigation') }}
+{# themes/custom/opt_theme/templates/navigation/menu--menu-principal.html.twig #}
+<ul{{attributes.addClass('menu')}}>
+	{% for item in items %}
+		{# Détection du lien d’accueil: on compare l’URL rendue à path('<front>') #}
+		{% set is_home = item.url.toString == path('<front>') %}
+
+		<li{{item.attributes}}>
+			{% if is_home %}
+				<a href="{{ item.url }}" class="menu__link menu__link--home" aria-label="{{ 'Accueil'|t }}">
+					<svg width="504" height="436" viewbox="0 0 504 436" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<rect width="504" height="436" fill="url(#pattern0_1173_2183)"/>
+						<defs>
+							<pattern id="pattern0_1173_2183" patterncontentunits="objectBoundingBox" width="1" height="1">
+								<use xlink:href="#image0_1173_2183" transform="matrix(0.0104167 0 0 0.0120413 0 -0.0779817)"/>
+							</pattern>
+							<image id="image0_1173_2183" width="96" height="96" preserveaspectratio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAArFJREFUeF7tmjFSG0EQRWdtDuLELoUOdABdhZvsTYxPIuV24JCCxAcB5KLIKFtt6e1u96yeUqpnR/91v0aCoflKTWBIfboPbwJIbgIBCCA5geTHOwECSE4g+fFOgACSE0h+vBMggOQEkh/vBAjg8gQ+b8f90IbDh6fj9/tf4+/LT8qr7HICNl/HT8837dvQ2u41umNrh49P7bZHCN0B2GzH3Utr+7/17HFot48/xru8fj7/yV0BeFPOW9f/+zWMPSmpCwDvlRP1WU9KKg/glHJCEB0oqTSA/1NOhKG2kkoCOFc5EYLKSioHgCgnBFFQSaUATKOcCEMtJZUAMLVyIgSVlJQOYE7lhCAKKCkVwDLKiTDkKikFwNLKiRBkKmlxAJnKCUEkKGlRADWUE2FYVkmLAKimnAjBkkqaHUBl5YQgFlDSrAD6UE6EYV4lzQKgN+VECOZU0uQAelZOCGIGJU0KYB3KiTBMq6RJAKxNORGCKZWEAaxZOSGICZSEAXzZjsfoomv++cPPEWWIil+DFYAAUgfMCUiNvzUBCMAlTHrAJUzSayoIxsfL3QE8Q3SCAFB8vFgAPEN0ggBQfLxYADxDdIIAUHy8WAA8Q3SCAFB8vFgAPEN0ggBQfLxYADxDdIIAUHy8ePUA6Buc+0+m9H7lv46mb1AAcMoFEARYvcOq308FJU+oAARwOgF3gDvgZAK0QVSQClJBqAeq/5pX/X4qCLXfFfxjFl1yTkByhwlAACcTcAckN4gABODnANQD1Zdc9fupINR+fg4I43MCwojcASii6h1W/X7uANR+7oAwPicgjMgdgCKq3mHV7+cOQO1XYAfA+199OZ6Aq08QBiAAGCAtFwBNENYLAAZIywVAE4T1AoAB0nIB0ARhvQBggLRcADRBWC8AGCAtFwBNENb/ATwQ8HDogekeAAAAAElFTkSuQmCC"/>
+						</defs>
+					</svg>
+					<span class="sr-only">{{ 'Accueil'|t }}</span>
+				</a>
+			{% else %}
+				{{ link(item.title, item.url, { 'class': ['menu__link'] }) }}
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>
