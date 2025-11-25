@@ -97,3 +97,64 @@
   .paragraph--type--bloc-image-texte .p-card__title{ font-size: .98rem; }
   .paragraph--type--bloc-image-texte .p-card__text{ font-size: .88rem; }
 }
+
+/* Bloc global */
+.bloc-chiffres-cles {
+  margin: 40px 0;
+  text-align: center;
+}
+
+/* Titre */
+.bloc-chiffres-cles__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #0B6E84; /* bleu/vert OPT si tu veux */
+}
+
+/* Bandeau de fond */
+.bloc-chiffres-cles__bg {
+  background: #f3ded0;           /* beige comme ta maquette */
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Ligne de cartes */
+.bloc-chiffres-cles__container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Carte individuelle */
+.bloc-chiffres-cles__item {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 18px 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  min-width: 180px;
+  max-width: 260px;
+}
+
+/* Chiffre */
+.bloc-chiffres-cles__number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0B6E84;
+  margin-bottom: 6px;
+}
+
+/* Texte */
+.bloc-chiffres-cles__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+@media (max-width: 768px) {
+  .bloc-chiffres-cles__item {
+    flex: 1 1 100%;
+  }
+}
