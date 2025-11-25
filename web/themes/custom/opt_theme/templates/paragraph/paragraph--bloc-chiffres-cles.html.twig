@@ -1,36 +1,33 @@
 {{ attach_library('opt_theme/paragraphs') }}
 
-<section class="bloc-chiffres-cles{% if paragraph.field_chiffre|length == 4 %} bloc-chiffres-cles--four{% endif %}">
-  {% set chiffres = paragraph.field_chiffre %}
-  {% set descriptions = paragraph.field_description %}
-
-  {% if chiffres|length %}
-    <div class="bloc-chiffres-cles__bg">
-
-      {% if content.field_titre %}
-        <h3 class="bloc-chiffres-cles__title">
-          {{ content.field_titre }}
-        </h3>
-      {% endif %}
-
-      <div class="bloc-chiffres-cles__container">
-        {% for i in 0..(chiffres|length - 1) %}
-          {% set chiffre = chiffres[i].value %}
-          {% set description = descriptions[i].value ?? '' %}
-
-          <div class="bloc-chiffres-cles__item">
-            <div class="bloc-chiffres-cles__number">
-              {{ chiffre }}
-            </div>
-
-            {% if description %}
-              <div class="bloc-chiffres-cles__label">
-                {{ description }}
-              </div>
-            {% endif %}
-          </div>
-        {% endfor %}
-      </div>
+<section class="bloc-chiffres">
+  {# Titre de l'encart #}
+  {% if content.field_titre is defined %}
+    <div class="bloc-chiffres__title">
+      {{ content.field_titre }}
     </div>
   {% endif %}
+
+  <div class="bloc-chiffres__grid">
+    {# On boucle sur les valeurs du champ "chiffre" #}
+    {% if paragraph.field_chiffre is defined %}
+      {% for item in paragraph.field_chiffre %}
+        {% set idx = loop.index0 %}
+
+        <article class="bloc-chiffres__card">
+          <div class="bloc-chiffres__value">
+            {{ item.value }}
+          </div>
+
+          {# On récupère la description qui a le même index #}
+          {% if paragraph.field_description is defined
+              and paragraph.field_description[idx] is defined %}
+            <div class="bloc-chiffres__label">
+              {{ paragraph.field_description[idx].value }}
+            </div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    {% endif %}
+  </div>
 </section>

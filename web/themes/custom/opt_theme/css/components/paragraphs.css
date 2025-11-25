@@ -100,92 +100,101 @@
 
 
 
-/* ---- Bloc Chiffres Clés ---- */
-.bloc-chiffres-cles {
-  margin: 60px 0;
-}
-
-/* Bandeau beige */
-.bloc-chiffres-cles__bg {
-  background: #f6e9dd;
+/* Bloc global */
+.bloc-chiffres {
+  max-width: 1300px;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem 2.5rem;
   border-radius: 24px;
-  padding: 48px 56px;
-  max-width: 1200px;
-  margin: 0 auto;
+  background: linear-gradient(
+      180deg,
+      #f7f2ea 0%,
+      #ece6f4 50%,
+      #dfe4f4 100%
+  );
+  box-shadow: 0 24px 45px rgba(0, 0, 0, 0.08);
 }
 
-/* Titre à l'intérieur du bloc, aligné à gauche comme BNP */
-.bloc-chiffres-cles__title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 32px;
-  color: #0B6E84;
-  text-align: left;
+/* Titre */
+.bloc-chiffres__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 2rem;
 }
 
-/* Par défaut : 3 cartes par ligne (flex) */
-.bloc-chiffres-cles__container {
+/* Grille flex */
+.bloc-chiffres__grid {
   display: flex;
-  gap: 32px;
-  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
 }
 
-/* Carte */
-.bloc-chiffres-cles__item {
+/* Cartes par défaut : 3 par ligne */
+.bloc-chiffres__card {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 40px 48px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  flex: 1 1 30%;   /* ≃ 3 cartes sur une ligne sur desktop */
-  min-width: 260px;
+  border-radius: 18px;
+  padding: 1.75rem 1.5rem;
   text-align: center;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+
+  flex: 0 0 31%;   /* ≈ 3 colonnes */
+  max-width: 31%;
+}
+
+/* Les 2 cartes du bas prennent plus de place */
+.bloc-chiffres__card:nth-child(4),
+.bloc-chiffres__card:nth-child(5) {
+  flex: 0 0 48%;
+  max-width: 48%;
 }
 
 /* Chiffre */
-.bloc-chiffres-cles__number {
-  font-size: 42px;
-  font-weight: 800;
+.bloc-chiffres__value {
+  font-size: 2.2rem;
+  font-weight: 700;
   color: #0B6E84;
-  margin-bottom: 16px;
+  margin-bottom: 0.5rem;
 }
 
-/* Texte */
-.bloc-chiffres-cles__label {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #1B1E23;
+/* Libellé */
+.bloc-chiffres__label {
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
-/* ----- Cas spécifique : 4 cartes → grille 2×2 ----- */
-.bloc-chiffres-cles--four .bloc-chiffres-cles__container {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
-}
-
-.bloc-chiffres-cles--four .bloc-chiffres-cles__item {
-  flex: none;   /* on laisse la grille gérer la largeur */
-}
-
-/* ----- Responsive ----- */
-@media (max-width: 900px) {
-  .bloc-chiffres-cles__bg {
-    padding: 32px 20px;
+/* Tablet : 2 colonnes */
+@media (max-width: 980px) {
+  .bloc-chiffres__grid {
+    justify-content: center;
   }
 
-  .bloc-chiffres-cles__container,
-  .bloc-chiffres-cles--four .bloc-chiffres-cles__container {
-    display: grid;
-    grid-template-columns: 1fr;   /* une carte par ligne sur mobile */
+  .bloc-chiffres__card,
+  .bloc-chiffres__card:nth-child(4),
+  .bloc-chiffres__card:nth-child(5) {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+}
+
+/* Mobile : 1 colonne */
+@media (max-width: 600px) {
+  .bloc-chiffres {
+    padding: 1.75rem 1.25rem 2rem;
   }
 
-  .bloc-chiffres-cles__item {
-    padding: 28px 24px;
-  
+  .bloc-chiffres__grid {
+    justify-content: center;
   }
 
-  .bloc-chiffres-cles__number {
-    font-size: 32px;
+  .bloc-chiffres__card,
+  .bloc-chiffres__card:nth-child(4),
+  .bloc-chiffres__card:nth-child(5) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .bloc-chiffres__value {
+    font-size: 1.8rem;
   }
 }
