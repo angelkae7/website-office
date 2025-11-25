@@ -1,20 +1,19 @@
 {{ attach_library('opt_theme/paragraphs') }}
 
-<section class="bloc-chiffres-cles">
-  {% if content.field_titre %}
-    <h3 class="bloc-chiffres-cles__title">
-      {{ content.field_titre }}
-    </h3>
-  {% endif %}
-
-  {# On récupère les valeurs brutes #}
+<section class="bloc-chiffres-cles{% if paragraph.field_chiffre|length == 4 %} bloc-chiffres-cles--four{% endif %}">
   {% set chiffres = paragraph.field_chiffre %}
   {% set descriptions = paragraph.field_description %}
 
   {% if chiffres|length %}
     <div class="bloc-chiffres-cles__bg">
+
+      {% if content.field_titre %}
+        <h3 class="bloc-chiffres-cles__title">
+          {{ content.field_titre }}
+        </h3>
+      {% endif %}
+
       <div class="bloc-chiffres-cles__container">
-        {# 0..(n-1) #}
         {% for i in 0..(chiffres|length - 1) %}
           {% set chiffre = chiffres[i].value %}
           {% set description = descriptions[i].value ?? '' %}

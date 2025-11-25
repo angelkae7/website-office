@@ -98,63 +98,94 @@
   .paragraph--type--bloc-image-texte .p-card__text{ font-size: .88rem; }
 }
 
-/* Bloc global */
+
+
+/* ---- Bloc Chiffres Clés ---- */
 .bloc-chiffres-cles {
-  margin: 40px 0;
-  text-align: center;
+  margin: 60px 0;
 }
 
-/* Titre */
-.bloc-chiffres-cles__title {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #0B6E84; /* bleu/vert OPT si tu veux */
-}
-
-/* Bandeau de fond */
+/* Bandeau beige */
 .bloc-chiffres-cles__bg {
-  background: #f3ded0;           /* beige comme ta maquette */
-  border-radius: 12px;
-  padding: 20px 24px;
-  display: inline-block;
-  width: 100%;
+  background: #f6e9dd;
+  border-radius: 24px;
+  padding: 48px 56px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Ligne de cartes */
+/* Titre à l'intérieur du bloc, aligné à gauche comme BNP */
+.bloc-chiffres-cles__title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #0B6E84;
+  text-align: left;
+}
+
+/* Par défaut : 3 cartes par ligne (flex) */
 .bloc-chiffres-cles__container {
   display: flex;
-  gap: 16px;
-  justify-content: center;
+  gap: 32px;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
-/* Carte individuelle */
+/* Carte */
 .bloc-chiffres-cles__item {
   background: #ffffff;
-  border-radius: 8px;
-  padding: 18px 24px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-  min-width: 180px;
-  max-width: 260px;
+  border-radius: 16px;
+  padding: 40px 48px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  flex: 1 1 30%;   /* ≃ 3 cartes sur une ligne sur desktop */
+  min-width: 260px;
+  text-align: center;
 }
 
 /* Chiffre */
 .bloc-chiffres-cles__number {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 42px;
+  font-weight: 800;
   color: #0B6E84;
-  margin-bottom: 6px;
+  margin-bottom: 16px;
 }
 
 /* Texte */
 .bloc-chiffres-cles__label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1B1E23;
 }
-@media (max-width: 768px) {
+
+/* ----- Cas spécifique : 4 cartes → grille 2×2 ----- */
+.bloc-chiffres-cles--four .bloc-chiffres-cles__container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.bloc-chiffres-cles--four .bloc-chiffres-cles__item {
+  flex: none;   /* on laisse la grille gérer la largeur */
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 900px) {
+  .bloc-chiffres-cles__bg {
+    padding: 32px 20px;
+  }
+
+  .bloc-chiffres-cles__container,
+  .bloc-chiffres-cles--four .bloc-chiffres-cles__container {
+    display: grid;
+    grid-template-columns: 1fr;   /* une carte par ligne sur mobile */
+  }
+
   .bloc-chiffres-cles__item {
-    flex: 1 1 100%;
+    padding: 28px 24px;
+  
+  }
+
+  .bloc-chiffres-cles__number {
+    font-size: 32px;
   }
 }
