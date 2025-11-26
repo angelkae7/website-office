@@ -198,3 +198,102 @@
     font-size: 1.8rem;
   }
 }
+
+/* ===== Bloc documents (fond beige) ===== */
+
+.bloc-documents {
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.bloc-documents__inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.bloc-documents__bg {
+  background: #efdacb;        /* beige */
+  border-radius: 14px;
+  padding: 2rem 2.5rem 2.5rem;
+}
+
+.bloc-documents__title {
+  margin: 0 0 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* enlève les marges Drupal autour des items */
+.bloc-documents__bg .field--name-field-fichiers {
+  margin: 0;
+}
+.bloc-documents__bg .field--name-field-fichiers .field__item {
+  margin-bottom: 0.9rem;
+}
+.bloc-documents__bg .field--name-field-fichiers .field__item:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Carte document ===== */
+
+.media-doc-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.media-doc-card__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* carré vignette à gauche */
+.media-doc-card__thumb {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: #f4f5f7;
+  border: 1px solid #d3d7dd;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+/* titre du fichier */
+.media-doc-card__title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #0b2135;
+  text-decoration: none;
+  flex: 1;                    /* prend toute la place dispo entre vignettes et meta */
+}
+
+/* zone droite : PDF + taille */
+.media-doc-card__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.78rem;
+  line-height: 1.25;
+  color: #565656;
+  min-width: 90px;
+}
+
+.media-doc-card__icon {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.media-doc-card__size {
+  margin-top: 0.15rem;
+}
+
+/* petit hover sympa */
+.media-doc-card:hover {
+  box-shadow: 0 5px 14px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+  transition: box-shadow .15s ease, transform .15s ease;
+}

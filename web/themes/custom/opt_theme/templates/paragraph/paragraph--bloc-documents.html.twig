@@ -6,14 +6,12 @@
     {% if content.field_fichiers %}
       <div class="bloc-documents__bg">
 
-        {# Titre à l'intérieur du bloc beige #}
         {% if content.field_titre %}
           <h3 class="bloc-documents__title">
             {{ content.field_titre }}
           </h3>
         {% endif %}
 
-        {# Rendu Drupal des fichiers #}
         {{ content.field_fichiers }}
 
       </div>

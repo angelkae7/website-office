@@ -1,0 +1,39 @@
+{# Version avec lien mais SANS taille #}
+{{ attach_library('opt_theme/paragraphs') }}
+
+{% set file = media.field_media_document.entity|default(null) %}
+{% set url  = '' %}
+
+{% if file %}
+  {# Récupération de l'URI du fichier (méthode du File entity) #}
+  {% set uri = file.getFileUri()|default('') %}
+  {% if uri %}
+    {% set url = file_url(uri) %}
+  {% endif %}
+{% endif %}
+
+
+<div class="media-doc-card">
+  <div class="media-doc-card__main">
+    <span class="media-doc-card__thumb">{{file.thumb.value}}</span>
+
+    {% if url %}
+      <a href="{{ url }}"
+         class="media-doc-card__title"
+         target="_blank"
+         rel="noopener">
+        {{ media.name.value }}
+      </a>
+    {% else %}
+      <span class="media-doc-card__title">
+        {{ media.name.value }}
+      </span>
+    {% endif %}
+
+    <div class="media-doc-card__meta">
+      <span class="media-doc-card__size" > {{ file.filesize.value|format_size }}</span>
+    
+    <span class="media-doc-card__icon doc-icon">PDF</span>
+    </div>
+
+</div>
